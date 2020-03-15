@@ -32,6 +32,7 @@ OFF_HOOK         = getConfigurationItem("off-hook", 16)
 RED              = getConfigurationItem("red", 19)
 BLUE             = getConfigurationItem("blue", 26)
 MUSIC_PLAYER     = getConfigurationItem("music-player", "mplayer")
+DIAL_TONE        = "kiestoon.mp3"
 
 def setupGPIO():
 	GPIO.setmode(GPIO.BCM)
@@ -48,12 +49,17 @@ def playNewSong(digit):
 		currentMusicThread = subprocess.Popen([MUSIC_PLAYER, join(dir, files[digit])])
 	return currentMusicThread
 
+def playDialTone():
+	return subprocess.Popen([MUSIC_PLAYER, DIAL_TONE])
+
+
 def stopCurrentSong(currentMusicThread):
 	if (not (currentMusicThread is None)):
 		currentMusicThread.kill()
 
 def polling():
 	currentMusicThread = None
+	enableDialTone = True
 	while True:
 		digit     = -1
 		dialling  =  False
@@ -66,6 +72,10 @@ def polling():
 			if(OffHookIn == 0):
 				stopCurrentSong(currentMusicThread)
 				currentMusicThread = None
+				enableDialTone = True
+			else:
+				if (enableDialTone and currentMusicThread is None):
+					currentMusicThread = playDialTone()
 			if (RedIn == 1 and BlueIn == 0):
 				dialling = True
 				if (startTime is None):
@@ -73,6 +83,7 @@ def polling():
 			else:
 				if dialling:
 					digit += 1
+					enableDialTone = False
 				dialling = False
 			if ( digit > -1 and (time.time() - startTime) > MAX_WAIT):
 				print("Dialled: " + str((digit + 1) % 10))  # Mapping of the rotator-digits to digit: 1-9 => 0-8, 0 => 9
