@@ -1,2 +1,76 @@
 # wphone
-Python versie van de Wonderfoon
+
+**WPhone** is de python versie van de Wonderfoon
+
+Deze software is gebaseerd op de software van www.wonderfoon.nl
+
+De python-versie van de Wonderfoon werkt met alle T65-modellen waar uit de draaischijf of het toetsenbord alleen een rode, blauwe en gele draad komen.
+
+### Configuratie
+
+De WPhone kent maar één configuratie-bestand, **wphone.config**, dat als volgt wordt uitgeleverd:
+
+```json
+{
+ "off-hook"        :  16,
+ "red"             :  19,
+ "blue"            :  26,	
+ "max-wait"        :  2,
+ "polling-interval":  0.02,
+ "music-dir"       : "music",
+ "music-player"    : "mplayer",
+ "led"             :  18  
+}
+```
+#### off-hook
+
+De naam van de GPIO-pin die signaleert of de hoorn op de haak ligt; 16 betekent GPIO16. Bij het oppakken van de hoorn klinkt **kiestoon.mp3** (dit is niet configureerbaar).
+
+#### red
+
+Het nummer van de GPIO-pin waar de rode draad aan vast is gemaakt; 19 betekent GPIO19.
+
+#### blue
+
+Het nummer van de GPIO-pin waar de rode draad aan vast is gemaakt; 26 betekent GPIO26.
+
+#### max-wait
+
+De tijd (in seconden, eventueel met decimalen) die wordt gewacht tot het langzaamste cijfer, '0', is gedraaid. Deze tijd kan per T65-model verschillen. Bij een hoge waarde duurt het lang voordat de gekozen muziek gaat spelen.
+
+#### polling-interval
+
+De tijd (in seconden, eventueel met decimalen) tussen opeenvolgende keren dat de GPIO-pinnen red en blue worden gelezen.
+
+#### music-dir
+
+In music-dir kunnen maximaal 10 audio-files staan. De eerste 9 nummers (gesorteerd op naam) horen bij cijfer 1 t/m 9, de tiende bij cijfer 0. De geluidsformaten moeten wel door de gekozen **music-player** afgespeeld kunnen worden. De namen van de audio-files hoeven aan geen enkele conventie te voldoen en worden nergens geconfigureerd, maar voor de sortering kan het handig zijn om met een getal (01 t/m 10) te beginnen.
+Deze directory kan absoluut of relatief aan de home-directory van Wphone zijn.
+
+#### music-player
+
+Het commando om de muziek af te spelen. De default, **mplayer**, speelt alle muziek-formaten af.
+
+#### led
+
+Het nummer van de GPIO-pin waaraan de LED is vast gemaakt; 18 betekent GPIO18. Deze LED gaat aan zodra de Raspberry Pi is opgestart.
+
+### Opmerkingen
+
+De gele draad moet aan één van de GND GPIO-pinnen vast zijn gemaakt maar hoeft niet geconfigureerd te worden.
+
+### Automatisch starten
+De WPhone kan automatisch gestart worden. In dit geval is WPhone geïnstalleerd in **/home/pi/wphone**.
+
+Voeg aan bestand **/etc/rc.local** de volgende regel toe (vlak voor de regel met **exit 0**):
+
+```bash
+cd /home/pi/wphone
+rm -f nohup.out; nohup wphone-start.sh &
+```
+
+Bij het starten gebeurt het volgende:
+ 
+- De LED gaat aan
+- Trompetgeschal
+- De WPhone gaat naar de telefoon luisteren
