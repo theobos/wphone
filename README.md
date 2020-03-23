@@ -1,8 +1,6 @@
 # wphone
 
-**WPhone** is de python versie van de Wonderfoon
-
-Deze software is gebaseerd op de software van www.wonderfoon.nl
+**WPhone** is de python versie van de Wonderfoon, gebaseerd op de software van www.wonderfoon.nl
 
 De python-versie van de Wonderfoon werkt met alle T65-modellen waar uit de draaischijf of het toetsenbord alleen een rode, blauwe en gele draad komen.
 
@@ -24,7 +22,7 @@ De WPhone kent maar één configuratie-bestand, **wphone.config**, dat als volgt
 ```
 #### off-hook
 
-De naam van de GPIO-pin die signaleert of de hoorn op de haak ligt; 16 betekent GPIO16. Bij het oppakken van de hoorn klinkt **kiestoon.mp3** (dit is niet configureerbaar).
+De naam van de GPIO-pin die signaleert of de hoorn op de haak ligt; 16 betekent GPIO16. Bij het oppakken van de hoorn klinkt de kiestoon.
 
 #### red
 
@@ -40,16 +38,16 @@ De tijd (in seconden, eventueel met decimalen) die wordt gewacht tot het langzaa
 
 #### polling-interval
 
-De tijd (in seconden, eventueel met decimalen) tussen opeenvolgende keren dat de GPIO-pinnen red en blue worden gelezen.
+De tijd (in seconden, eventueel met decimalen) tussen de opeenvolgende keren dat de GPIO-pinnen red en blue worden gelezen.
 
 #### music-dir
 
-In music-dir kunnen maximaal 10 audio-files staan. De eerste 9 nummers (gesorteerd op naam) horen bij cijfer 1 t/m 9, de tiende bij cijfer 0. De geluidsformaten moeten wel door de gekozen **music-player** afgespeeld kunnen worden. De namen van de audio-files hoeven aan geen enkele conventie te voldoen en worden nergens geconfigureerd, maar voor de sortering kan het handig zijn om met een getal (01 t/m 10) te beginnen.
-Deze directory kan absoluut of relatief aan de home-directory van Wphone zijn.
+In **music-dir** staan de audio-files. De eerste 9 nummers (gesorteerd op naam) horen bij cijfer 1 t/m 9, de tiende bij cijfer 0. De geluidsformaten moeten wel door de gekozen **music-player** afgespeeld kunnen worden. De namen van de audio-files hoeven aan geen enkele conventie te voldoen en worden nergens geconfigureerd, maar voor de sortering kan het handig zijn om met een getal (01 t/m 10) te beginnen.
+Deze directory kan absoluut of relatief aan de installatie-directory van WPhone zijn.
 
 #### music-player
 
-Het commando om de muziek af te spelen. De default, **mplayer**, speelt alle muziek-formaten af.
+Het commando om de muziek af te spelen. De default, **mplayer**, speelt alle (on)bekende muziek-formaten af.
 
 #### led
 
