@@ -1,4 +1,4 @@
-# wphone
+# WPhone
 
 **WPhone** is de python versie van de Wonderfoon, gebaseerd op de software van www.wonderfoon.nl
 
@@ -42,7 +42,7 @@ De tijd (in seconden, eventueel met decimalen) tussen de opeenvolgende keren dat
 
 #### music-dir
 
-In **music-dir** staan de audio-files. De eerste 9 nummers (gesorteerd op naam) horen bij cijfer 1 t/m 9, de tiende bij cijfer 0. De geluidsformaten moeten wel door de gekozen **music-player** afgespeeld kunnen worden. De namen van de audio-files hoeven aan geen enkele conventie te voldoen en worden nergens geconfigureerd, maar voor de sortering kan het handig zijn om met een getal (01 t/m 10) te beginnen.
+In **music-dir** staan de audio-files. De eerste 9 files (gesorteerd op naam) horen bij cijfer 1 t/m 9, de tiende bij cijfer 0. De geluidsformaten moeten wel door de gekozen **music-player** afgespeeld kunnen worden. De namen van de audio-files hoeven aan geen enkele conventie te voldoen en worden nergens geconfigureerd, maar voor de sortering kan het handig zijn om de naam met een getal (01 t/m 10) te beginnen.
 Deze directory kan absoluut of relatief aan de installatie-directory van WPhone zijn.
 
 #### music-player
@@ -67,8 +67,8 @@ cd /home/pi/wphone
 rm -f nohup.out; nohup wphone-start.sh &
 ```
 
-Bij het starten gebeurt het volgende:
+Zodra de Rasperry Pi is gestart, gebeurt het volgende:
  
 - De LED gaat aan
 - Trompetgeschal
-- De WPhone gaat naar de telefoon luisteren
+- Afluisteren van draaischijf of toetsenbord begint
