@@ -58,7 +58,7 @@ Het nummer van de GPIO-pin waaraan de LED is vast gemaakt; 18 betekent GPIO18. D
 
 De gele draad moet aan één van de GND GPIO-pinnen vast zijn gemaakt maar hoeft niet geconfigureerd te worden.
 
-### Installatie
+### Installatie & Starten
 Kopieer alle bestanden naar dezelfde directory, bijvoorbeeld **/home/pi/wphone**.
 Voor testen & experimenteren kan de WPhone als volgt gestart worden:
 
