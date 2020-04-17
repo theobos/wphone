@@ -77,7 +77,7 @@ cd /home/pi/wphone
 rm -f nohup.out; nohup wphone-start.sh &
 ```
 
-Zodra de Rasperry Pi is gestart, gebeurt het volgende:
+Zodra de Raspberry Pi is gestart, gebeurt het volgende:
  
 - De LED gaat aan
 - Trompetgeschal
