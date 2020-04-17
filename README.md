@@ -1,8 +1,9 @@
 # WPhone
 
-**WPhone** is de python versie van de Wonderfoon, gebaseerd op de software van www.wonderfoon.nl
+**WPhone** is de Python-versie van de eerste Wonderfoon, die was geschreven in Go voor de Raspberry Pi. (Zie **wonderfoon-1.1.pdf** voor bouw-instructies) Deze variant is niet meer te vinden op de websites www.wonderfoon.nl en www.wonderfoon.eu, maar is vervangen door Wonderfoons die kant en klaar te koop zijn, of varianten waarvan het zelf bouwen wat minder bewerkelijk is. 
+De Python-versie is eenvoudiger dan de versie in Go: er is maar één configuratie-bestand en er is geen build nodig.
 
-De python-versie van de Wonderfoon werkt met alle T65-modellen waar uit de draaischijf of het toetsenbord alleen een rode, blauwe en gele draad komen.
+WPhone werkt met alle T65-modellen waar uit de draaischijf of het toetsenbord alleen een rode, blauwe en gele draad komen.
 
 ### Configuratie
 
