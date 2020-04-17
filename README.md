@@ -60,7 +60,12 @@ De gele draad moet aan één van de GND GPIO-pinnen vast zijn gemaakt maar hoeft
 
 ### Installatie
 Kopieer alle bestanden naar dezelfde directory, bijvoorbeeld **/home/pi/wphone**.
-Voor testen & experimenteren kan de WPhone wordt gestart met **./wphone-start.sh**.
+Voor testen & experimenteren kan de WPhone als volgt gestart worden:
+
+```bash
+cd /home/pi/wphone
+./wphone-start.sh
+```
 
 ### Automatisch starten
 De WPhone kan automatisch gestart worden. In dit geval is WPhone geïnstalleerd in **/home/pi/wphone**.
